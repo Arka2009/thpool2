@@ -9,6 +9,10 @@
 #include <pthread.h>
 #include <stdbool.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Binary semaphore */
 typedef struct __bsem {
 	pthread_mutex_t mutex;
@@ -43,5 +47,9 @@ void  bsem_reset(bsem_t *bsem_p);
 void  bsem_post(bsem_t  *bsem_p);
 void  bsem_post_all(bsem_t  *bsem_p);
 void  bsem_wait(bsem_t *bsem_p);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /*__THPOOL2_DEF_H_ */
